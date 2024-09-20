@@ -1,6 +1,10 @@
 {
-  "name": "@nexus/react-table",
+  "name": "@nexussoftware/table",
   "version": "1.0.0",
+  "author": {
+    "email": "ahmedsamideveloper@gmail.com",
+    "name": "Ahmed Sami"
+  },
   "dependencies": {
     "@hybris-software/ui-kit": "^2.1.18",
     "@hybris-software/use-query": "^2.3.17",
@@ -13,6 +17,10 @@
     "react-table": "^7.8.0",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ahmed-Sami-Hamid/nexus-table.git"
   },
   "scripts": {
     "start": "react-scripts start",
