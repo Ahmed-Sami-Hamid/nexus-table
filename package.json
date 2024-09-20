@@ -1,6 +1,6 @@
 {
   "name": "@nexus/react-table",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@hybris-software/ui-kit": "^2.1.18",
