@@ -1,0 +1,391 @@
+.tableContainer {
+	position: relative;
+}
+
+.filterRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.leftSideFilter .actions {
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.rightSideFilter {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/** Selects */
+.searchFieldSelectClass,
+.allowedActionsSelectClass,
+.pageSizeSelectClass {
+	border: 1px solid #e7e7e7;
+	padding: 11px 15px;
+	min-width: 150px;
+	border-radius: 3px;
+	font-size: 12px;
+}
+.searchFieldSelectClassOpened,
+.allowedActionsSelectClassOpened,
+.pageSizeSelectClassOpened {
+	border: 1px solid #e7e7e7;
+	background-color: white;
+	border-top: none;
+	width: calc(100% + 2px);
+	left: -1px;
+	top: 97%;
+	border-radius: 0 0 5px 5px;
+}
+.searchFieldSelectClassOptions,
+.allowedActionsSelectClassOptions,
+.pageSizeSelectClassOptions {
+	padding: 12px 15px;
+}
+.searchFieldSelectClassOptions:hover,
+.allowedActionsSelectClassOptions:hover,
+.pageSizeSelectClassOptions:hover {
+	background-color: rgba(128, 128, 128, 0.226);
+}
+
+/** Search */
+.searchBarClass {
+	min-height: 43px;
+}
+
+/** Options */
+.selectContainer {
+	display: inline-block;
+}
+.select {
+	cursor: pointer;
+	position: relative;
+	font-size: 12px;
+	border: 1px solid #bababa;
+	border-radius: 8px;
+}
+.select:hover {
+	border: 1px solid #dad0d0;
+}
+
+.iconContainer {
+	display: flex;
+	padding: 7px 20px;
+}
+
+.tooltopOptions {
+	position: absolute;
+	padding-top: 10px;
+	top: 100%;
+	left: 0;
+	z-index: 2;
+	min-width: 150px;
+}
+
+.options {
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+	color: black;
+}
+
+.options .heading {
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.options > div {
+	padding: 5px 0;
+	cursor: pointer;
+}
+
+/*+ Checkbox */
+.checkboxInput {
+	display: inline-block;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+.checkboxInput i {
+	position: relative;
+	display: inline-block;
+	margin-top: 5px;
+	width: 32px;
+	height: 18px;
+	background-color: #e6e6e6;
+	border-radius: 23px;
+	vertical-align: text-bottom;
+	transition: all 0.3s linear;
+}
+.checkboxInput i::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 28px;
+	height: 14px;
+	background-color: #fff;
+	border-radius: 11px;
+	transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+	transition: all 0.25s linear;
+}
+.checkboxInput i::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 12px;
+	height: 14px;
+	background-color: #fff;
+	border-radius: 11px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+	transform: translate3d(2px, 2px, 0);
+	transition: all 0.2s ease-in-out;
+}
+.checkboxInput:active i::after {
+	width: 14px;
+	transform: translate3d(2px, 2px, 0);
+}
+.checkboxInput:active input:checked + i::after {
+	transform: translate3d(16px, 2px, 0);
+}
+.checkboxInput input {
+	display: none;
+}
+.checkboxInput input:checked + i {
+	background-color: #857f7f;
+}
+.checkboxInput input:checked + i::before {
+	transform: translate3d(14px, 2px, 0) scale3d(0, 0, 0);
+}
+.checkboxInput input:checked + i::after {
+	transform: translate3d(18px, 2px, 0);
+}
+.checkboxInput span {
+	margin-left: 10px;
+}
+
+/** Table */
+.tableContent {
+	overflow-x: auto;
+	position: relative;
+	margin-block: 5px;
+}
+.tableContent.active {
+	cursor: grabbing;
+	cursor: -webkit-grabbing;
+}
+.headerSection {
+	position: relative;
+	display: flex;
+}
+.clampedText {
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+.sortingClassName {
+	cursor: pointer;
+}
+.sortingIconActive path {
+	fill: black;
+}
+.clampedCell {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+.noResults {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/** Pagination */
+.paginationClass {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+.leftPagination {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.recordPaginationInfo {
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+}
+.toPageInputClass {
+	max-width: 70px;
+}
+.inputChangePage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10px;
+	text-align: center;
+}
+.paginationButtonClass {
+	background-color: #bababa;
+	border: 1px solid #bababa;
+	border-radius: 5px;
+	color: white;
+	padding: 10px 20px;
+	font-size: 13px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* .tableLoader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 2px solid black;
+	clip-path: polygon(0% 0%, 100% 100%, 100% 0%, 0% 100%);
+	animation: rotate 1.2s linear infinite;
+} */
+
+/* 
+.inputSearch {
+	max-width: 250px;
+	border: none;
+	border-bottom: 1px solid #5d6e82;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 7px 0;
+	padding-right: 30px;
+	color: black;
+	background: transparent
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath fill='gray' d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+		no-repeat;
+	background-position: 97% 6px;
+	background-size: 17px;
+} */
+
+/** Loader */
+.ldsRing {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.ldsRing div {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background: #acacac;
+	border-radius: 50%;
+	animation: ldsRing 1.2s linear infinite;
+}
+.ldsRing div:nth-child(1) {
+	animation-delay: 0s;
+	top: 37px;
+	left: 66px;
+}
+.ldsRing div:nth-child(2) {
+	animation-delay: -0.1s;
+	top: 22px;
+	left: 62px;
+}
+.ldsRing div:nth-child(3) {
+	animation-delay: -0.2s;
+	top: 11px;
+	left: 52px;
+}
+.ldsRing div:nth-child(4) {
+	animation-delay: -0.3s;
+	top: 7px;
+	left: 37px;
+}
+.ldsRing div:nth-child(5) {
+	animation-delay: -0.4s;
+	top: 11px;
+	left: 22px;
+}
+.ldsRing div:nth-child(6) {
+	animation-delay: -0.5s;
+	top: 22px;
+	left: 11px;
+}
+.ldsRing div:nth-child(7) {
+	animation-delay: -0.6s;
+	top: 37px;
+	left: 7px;
+}
+.ldsRing div:nth-child(8) {
+	animation-delay: -0.7s;
+	top: 52px;
+	left: 11px;
+}
+.ldsRing div:nth-child(9) {
+	animation-delay: -0.8s;
+	top: 62px;
+	left: 22px;
+}
+.ldsRing div:nth-child(10) {
+	animation-delay: -0.9s;
+	top: 66px;
+	left: 37px;
+}
+.ldsRing div:nth-child(11) {
+	animation-delay: -1s;
+	top: 62px;
+	left: 52px;
+}
+.ldsRing div:nth-child(12) {
+	animation-delay: -1.1s;
+	top: 52px;
+	left: 62px;
+}
+@keyframes ldsRing {
+	0%,
+	20%,
+	80%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.filterRow {
+		flex-direction: column;
+	}
+	.leftSideFilter,
+	.leftPagination {
+		margin-left: auto;
+		margin-bottom: 10px;
+	}
+	.paginationClass {
+		flex-direction: column;
+	}
+	.inputChangePage {
+		margin-left: auto;
+	}
+}
