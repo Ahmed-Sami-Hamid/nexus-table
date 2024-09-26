@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { generateApiClient, ApiProvider } from "@hybris-software/use-query";
-import { ThemeProvider } from "@hybris-software/ui-kit";
+import { generateApiClient, ApiProvider } from "@nexussoftware/fetch-query";
+import { ThemeProvider } from "@nexussoftware/ui-kit";
 import "./index.css";
 import Theme from "./Theme.module.css";
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const apiClient = generateApiClient({
@@ -16,13 +15,13 @@ const apiClient = generateApiClient({
 });
 root.render(
   <ThemeProvider
-  theme={{
-    button: {
-      buttonClassName: Theme.buttonClass,
-      buttonDisabledClassName: Theme.buttonDisabledClass,
-      loader: <div className={Theme.buttonLoader}>loading...</div>,
-    },
-  }}
+    theme={{
+      button: {
+        buttonClassName: Theme.buttonClass,
+        buttonDisabledClassName: Theme.buttonDisabledClass,
+        loader: <div className={Theme.buttonLoader}>loading...</div>,
+      },
+    }}
   >
     <ApiProvider apiClient={apiClient}>
       <App />

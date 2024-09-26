@@ -1,4 +1,4 @@
-import useQuery from "@hybris-software/use-query/dist/Hooks/useQuery";
+import useQuery from "@nexussoftware/fetch-query/dist/Hooks/useQuery";
 import React, { useRef, useState } from "react";
 import { BiLeftArrowCircle } from "react-icons/bi";
 import GeneralTable from "../GeneralTable/GeneralTable";
@@ -23,7 +23,7 @@ const TestView = () => {
       Header: "User",
       field: "user",
       sortable: false,
-      searchField:"user__username",
+      searchField: "user__username",
       accessor: (row) => {
         return row.user.username;
       },
@@ -32,7 +32,7 @@ const TestView = () => {
       Header: "Date",
       field: "createdAt",
       searchable: false,
-      orderField:"created_at",
+      orderField: "created_at",
       accessor: (row) => {
         return row.createdAt;
       },
@@ -40,7 +40,7 @@ const TestView = () => {
     {
       Header: "Subject",
       field: "subject",
-      orderField:"subject",
+      orderField: "subject",
       accessor: (row) => {
         return row.subject;
       },
@@ -48,7 +48,7 @@ const TestView = () => {
     {
       Header: "Title",
       field: "title",
-      orderField:"title",
+      orderField: "title",
       searchable: false,
       accessor: (row) => {
         return row.title;
@@ -57,7 +57,7 @@ const TestView = () => {
     {
       Header: "Status",
       field: "status",
-      orderField:"status",
+      orderField: "status",
       searchable: false,
       accessor: (row) => {
         return row.status;
@@ -66,7 +66,7 @@ const TestView = () => {
     {
       Header: "Priority",
       field: "priority",
-      orderField:"priority",
+      orderField: "priority",
       searchable: false,
       accessor: (row) => {
         return row.priority;
@@ -93,7 +93,7 @@ const TestView = () => {
     {
       Header: "Date",
       field: "createdAt",
-      orderField:"created_at",
+      orderField: "created_at",
       searchable: false,
       accessor: (row) => {
         return row.createdAt;
@@ -102,7 +102,7 @@ const TestView = () => {
     {
       Header: "Deposit Type",
       field: "depositType",
-      orderField:"deposit_type",
+      orderField: "deposit_type",
       accessor: (row) => {
         return row.depositType;
       },
@@ -110,7 +110,7 @@ const TestView = () => {
     {
       Header: "Destination",
       field: "destination",
-      orderField:"destination",
+      orderField: "destination",
       searchable: false,
       accessor: (row) => {
         return row.destination;
@@ -119,7 +119,7 @@ const TestView = () => {
     {
       Header: "RequestedCryptoAmount",
       field: "requestedCryptoAmount",
-      orderField:"requested_crypto_amount",
+      orderField: "requested_crypto_amount",
       searchable: false,
       accessor: (row) => {
         return row.requestedCryptoAmount;
@@ -128,7 +128,7 @@ const TestView = () => {
     {
       Header: "CryptoCurrency",
       field: "cryptoCurrency",
-      orderField:"crypto_currency",
+      orderField: "crypto_currency",
       searchable: false,
       accessor: (row) => {
         return row.cryptoCurrency;
@@ -137,7 +137,7 @@ const TestView = () => {
     {
       Header: "Status",
       field: "status",
-      orderField:"status",
+      orderField: "status",
       searchable: false,
       accessor: (row) => {
         return row.status;

@@ -14,15 +14,11 @@ import ConditionalComponent from "./ConditionalComponent/ConditionalComponent";
 
 // Libraries
 import { useTable } from "react-table";
-import { Button, InputField } from "@hybris-software/ui-kit";
-import useQuery from "@hybris-software/use-query";
+import { Button, InputField } from "@nexussoftware/ui-kit";
+import useQuery from "@nexussoftware/fetch-query";
 
 //Addons
-import {
-  createUrl,
-  updateObjectState,
-  CommonStyles,
-} from "./tableAddons";
+import { createUrl, updateObjectState, CommonStyles } from "./tableAddons";
 
 //Icon
 import { ImWrench } from "react-icons/im";
@@ -170,7 +166,12 @@ const GeneralTable = forwardRef(function GeneralTable(
   const computedColumns = useMemo(() => {
     return [
       ...(enableSelectableRows ? [selectColumn] : []),
-      ...columns.filter((item) => !hiddenColumns.includes(item.field)).map(column => ({...column, searchField: column.searchField || column.field})),
+      ...columns
+        .filter((item) => !hiddenColumns.includes(item.field))
+        .map((column) => ({
+          ...column,
+          searchField: column.searchField || column.field,
+        })),
     ];
   }, [columns, selectColumn, enableSelectableRows, hiddenColumns]);
 
@@ -331,7 +332,9 @@ const GeneralTable = forwardRef(function GeneralTable(
               </ConditionalComponent>
             </div>
             <div className={Style.rightSideFilter}>
-              <ConditionalComponent condition={enableSearchFieldSelect && searchFields.length > 0 }>
+              <ConditionalComponent
+                condition={enableSearchFieldSelect && searchFields.length > 0}
+              >
                 <SelectComponent
                   className={searchFieldSelectClassName}
                   classNameOpened={searchFieldSelectClassNameOpened}
@@ -339,7 +342,9 @@ const GeneralTable = forwardRef(function GeneralTable(
                   columnLabel="Header"
                   columnValue="searchField"
                   placeholder={searchFieldSelectPlaceholder}
-                  columns={computedColumns.filter((item) => item.searchable !== false)}
+                  columns={computedColumns.filter(
+                    (item) => item.searchable !== false
+                  )}
                   selectedItem={
                     computedColumns.filter(
                       (item) => item.searchField === tableSettings.search.field
@@ -351,7 +356,9 @@ const GeneralTable = forwardRef(function GeneralTable(
                   }}
                 />
               </ConditionalComponent>
-              <ConditionalComponent condition={enableSearch && searchFields.length > 0 }>
+              <ConditionalComponent
+                condition={enableSearch && searchFields.length > 0}
+              >
                 <InputField
                   showError={false}
                   placeholder={searchBarPlaceholder}
@@ -497,7 +504,9 @@ const GeneralTable = forwardRef(function GeneralTable(
                                   className={computedSortingClassName}
                                   onClick={() => {
                                     const computedSorting =
-                                      (tableSettings.sortingSettings.includes("-"))
+                                      tableSettings.sortingSettings.includes(
+                                        "-"
+                                      )
                                         ? column.orderField
                                         : "-" + column.orderField;
                                     tableRef.current.setSortingSettings(
@@ -507,7 +516,9 @@ const GeneralTable = forwardRef(function GeneralTable(
                                 >
                                   <ComputedUpSortIcon
                                     condition={
-                                      !tableSettings.sortingSettings.includes("-") &&
+                                      !tableSettings.sortingSettings.includes(
+                                        "-"
+                                      ) &&
                                       tableSettings.sortingSettings ===
                                         column.orderField
                                     }
@@ -520,9 +531,11 @@ const GeneralTable = forwardRef(function GeneralTable(
                                   ></ComputedUpSortIcon>
                                   <ComputedDownSortIcon
                                     condition={
-                                      tableSettings.sortingSettings.includes("-") &&
+                                      tableSettings.sortingSettings.includes(
+                                        "-"
+                                      ) &&
                                       tableSettings.sortingSettings ===
-                                        "-"+column.orderField
+                                        "-" + column.orderField
                                     }
                                     activeClassName={
                                       computedActiveSortIconClassName
