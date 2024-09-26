@@ -1,13 +1,13 @@
 {
   "name": "@nexussoftware/table",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "author": {
     "email": "ahmedsamideveloper@gmail.com",
     "name": "Ahmed Sami"
   },
   "dependencies": {
-    "@hybris-software/ui-kit": "^2.1.18",
-    "@hybris-software/use-query": "^2.3.17",
+    "@nexussoftware/fetch-query": "^0.1.1",
+    "@nexussoftware/ui-kit": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
